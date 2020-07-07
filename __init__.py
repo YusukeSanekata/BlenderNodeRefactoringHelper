@@ -34,8 +34,8 @@ class NodeRefactoringHelperUIPanel(bpy.types.Panel):
 
     def draw(self, context):
         layout = self.layout
-        layout.operator("object.extractnodevalues")
         layout.operator("object.transfergroupinputvalue")
+        layout.operator("object.extractnodevalues")
 
 classes = [
     NodeRefactoringHelperUIPanel,

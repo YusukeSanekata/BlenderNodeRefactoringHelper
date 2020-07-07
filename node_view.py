@@ -17,7 +17,7 @@ def main():
     input_node_types = {
         "RGBA": "ShaderNodeRGB",
         "VALUE": "ShaderNodeValue",
-        "VECTOR": "ShaderNodeNormal",
+        "VECTOR": "ShaderNodeTexCoord",
     }
 
 
@@ -30,6 +30,8 @@ def main():
 
     output_node_types = {
         "RGBA": "ShaderNodeEmission",
+        "SHADER": "ShaderNodeEmission",
+        "VECTOR": "NodeReroute",
     }
 
 
@@ -100,7 +102,10 @@ def main():
 
 class ExtractNodeValuesOperator(bpy.types.Operator):
     bl_idname = "object.extractnodevalues"
+    bl_region_type = 'UI' #des Nキーのメニュー
+    bl_category = 'Item' 
     bl_label = "ExtractNodeValues"
+
 
     def execute(self, context):
         main()
